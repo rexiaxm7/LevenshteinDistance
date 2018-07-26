@@ -8,8 +8,15 @@ namespace LevenshteinDistance.Tests
         [TestMethod]
         public void CalculateTest()
         {
-            var calculate = LevenshteinDistanceCalculator.Calculate("string", "being");
-            Assert.AreEqual(3, calculate);
+            var distance = LevenshteinDistanceCalculator.Calculate("string", "being");
+            Assert.AreEqual(3, distance);
+        }
+
+        [TestMethod]
+        public void CalculateWithCostTest()
+        {
+            var distance = LevenshteinDistanceCalculator.Calculate("agent", "agency", 7, 10, 7);
+            Assert.AreEqual(17, distance);
         }
     }
 }
