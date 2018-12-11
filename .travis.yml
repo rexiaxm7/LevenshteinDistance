@@ -12,3 +12,10 @@ script:
   - dotnet build -c Release
   - cd ..
   - dotnet test LevenshteinDistance.Tests
+deploy:
+  provider: releases
+  api_key: "6b90b1087ff3b5fe22d106f62a41427d6da8ac07"
+  file: "LevenshteinDistance\bin\Release\netstandard2.0\LevenshteinDistance.dll"
+  skip_cleanup: true
+  on:
+    tags: true
