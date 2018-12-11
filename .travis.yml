@@ -19,3 +19,4 @@ deploy:
   file: "$TRAVIS_BUILD_DIR/LevenshteinDistance/bin/Release/netstandard2.0/LevenshteinDistance.dll"
   on:
     repo: rexiaxm7/LevenshteinDistance
+    tags: true
