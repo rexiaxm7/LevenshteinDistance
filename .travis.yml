@@ -14,7 +14,7 @@ script:
   - dotnet test LevenshteinDistance.Tests
 deploy:
   provider: releases
-  api_key: "6b90b1087ff3b5fe22d106f62a41427d6da8ac07"
+  api_key: "9937a09934ae3ec236c75d22103a83894c56fc76"
   file: "$TRAVIS_BUILD_DIR/LevenshteinDistance/bin/Release/netstandard2.0/LevenshteinDistance.dll"
   skip_cleanup: true
   on:
