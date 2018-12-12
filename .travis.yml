@@ -12,6 +12,11 @@ script:
 - dotnet build -c Release
 - cd ..
 - dotnet test LevenshteinDistance.Tests
+
+before_deploy:
+  # 配布データの生成
+  - zip -q test.zip -r $(ls -I)
+  
 deploy:
   provider: releases
   api_key:
