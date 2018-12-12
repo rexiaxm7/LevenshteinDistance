@@ -13,14 +13,13 @@ script:
 - cd ..
 - dotnet test LevenshteinDistance.Tests
 before_deploy:
-  - mkdir packages
-  - zip -q packages/test.zip -r $(ls -I)
+  - zip -q test.zip -r $(ls -I ./)
 deploy:
   provider: releases
   api_key:
     secure: TIzydFYI+qZPrp8YRdQRsLp1ls/Mygf/x//r3r6JBrtKDAXOIF5PgUJeSxuNkbl2vGq26WyUXvDuM3qOg1qFQD5XkPZ+QQDqCieFVRsxRU/Z87O0rvENuI+Of5xqhquh7OchKo8MrC5+uNGcbAeU8MDxUdrDtaEzu7e0UOF3iRC8pDdKS57+WWiTpFB/emyt5I/dUpojO5Ky6+wR+dvfUKriMWuu1LDcU/fdl+2XcrG4BIswVbW4jzhkTeZFIoExVGZ0bBqAedj0OgsHtRWcYxeJIMARPKOc/u80kBoazaEL16LZGPX3E3LMhgCSytJ/KlG1gQr45d4KpIgCQ59wzW+vvrCoz6YSc1R1ygDJsEQmiPPYa+UQP88phR/RyaulGYvNFc+49kll7hZ5o/JeNRrm9u4XRRy1lZDa4rTK95hufbiOhDcCL8rtzPf2tiQM3NFK8PM71c6/YKhFrfhBeDlN9SSZCOQwQCpU0VeplJnonA7K0YXoNju3cvM1si5Py69BLpAzm81WkpTj909d2kk4mvwcUCagLL+2xVqupFbSC/DvzP/0ZXfFLyOvTLURKL6nhHt7mu/aYhZ/xK62alak+PC9386IVtzzncNh3N6UY16XTjYwbirxGY4a6UpBOxRGc0v8v42uxb4Uao2ZPlmcwGolN4wPZBt+e8HWpPE=
   file_glob: true
-  file: "packages/test.zip"
+  file: "test.zip"
   on:
     repo: rexiaxm7/LevenshteinDistance
     tags: true
