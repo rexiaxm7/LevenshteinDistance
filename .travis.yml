@@ -13,7 +13,6 @@ script:
 - cd ..
 - dotnet test LevenshteinDistance.Tests
 before_deploy:
-  # 配布データの生成
   - mkdir packages
   - zip -q packages/test.zip -r $(ls -I packages)
 deploy:
