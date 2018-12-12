@@ -21,3 +21,4 @@ deploy:
   on:
     repo: rexiaxm7/LevenshteinDistance
     tags: true
+    
