@@ -14,6 +14,14 @@ script:
 - dotnet test LevenshteinDistance.Tests
 before_deploy:
   - ls
+  - cd LevenshteinDistance
+  - ls
+  - cd bin
+  - ls 
+  - cd Release
+  - ls
+  - cd netstandard2.0
+  - ls
   - zip -q test.zip -r $(ls -I ./)
 deploy:
   provider: releases
