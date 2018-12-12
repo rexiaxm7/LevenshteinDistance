@@ -14,7 +14,7 @@ script:
 - dotnet test LevenshteinDistance.Tests
 before_deploy:
   - mkdir packages
-  - zip -q packages/test.zip -r $(ls -I packages)
+  - zip -q packages/test.zip -r $(ls -I)
 deploy:
   provider: releases
   api_key:
