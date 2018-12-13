@@ -1,0 +1,21 @@
+language: csharp
+dist: trusty
+dotnet: 2.0.0
+mono: none
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+    - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+script:
+  - cd LevenshteinDistance
+  - dotnet restore
+  - dotnet build -c Release
+  - cd ..
+  - dotnet test LevenshteinDistance.Tests
+deploy:
+  provider: releases
+  api_key: "069a1ff99bce8355d3c8a631b6798d3359b380ea"
+  file: "$TRAVIS_BUILD_DIR/LevenshteinDistance/bin/Release/netstandard2.0/LevenshteinDistance.dll"
+  skip_cleanup: true
+  on:
+    tags: true
